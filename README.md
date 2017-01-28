@@ -2,9 +2,9 @@
 # Validating RevBayes joint ancestral state estimation
 
 This repo contains scripts to validate the joint ancestral state
-estimation of SSE models implemented in RevBayes
+estimation of SSE models implemented in [RevBayes](http://revbayes.com)
 against the marginal ancestral state
-estimation implemented in the R package diversitree.
+estimation implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/).
 
 ### To run an example:
 
@@ -38,9 +38,9 @@ and RevBayes was 0.6883.
 
 ### diversitree ancestral states:
 
-![diversitree plot](results/diversitree_ancestral_states.pdf)
+![diversitree plot](results/diversitree_ancestral_states.jpg)
 
 ### RevBayes ancestral states:
 
-![RevBayes plot](results/revbayes_ancestral_states.pdf)
+![RevBayes plot](results/revbayes_ancestral_states.jpg)
 
