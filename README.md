@@ -34,10 +34,11 @@ and q01 = q10 = 0.02.
 
 The log-likelihood as computed by diversitree was -260.634,
 whereas with RevBayes it was -260.803.
-Joint and marginal reconstructions should return the same probabilities 
-for states at the root, and indeed
-divirsitree's root probability of being in state 0 was 0.6882
-and RevBayes was 0.6883.
+Small difference in the log-likelihoods are expected due to numerical approximations.
+However the joint and marginal reconstructions should return the same probabilities 
+for ancestral states at the root, and indeed
+divirsitree calculated the root probability of being in state 0 as 0.6882
+and RevBayes calculated it as 0.6883.
 
 ### diversitree ancestral states:
 
