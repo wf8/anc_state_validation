@@ -29,6 +29,9 @@ Rscript 3_plot_Rev_results.R
 
 ### Example results:
 
+Here we show the results for an example where λ0 = 0.2, λ1 = 0.4, µ0 = 0.01, µ1 = 0.1, 
+and q01 = q10 = 0.02.
+
 The log-likelihood as computed by diversitree was -260.634,
 whereas with RevBayes it was -260.803.
 Joint and marginal reconstructions should return the same probabilities 
