@@ -1,0 +1,49 @@
+
+# use the same parameter values that the data were simulated under
+lambda_0 <- 0.2
+lambda_1 <- 0.4
+mu_0 <- 0.01
+mu_1 <- 0.1
+delta <- 0.02
+
+# read in simulated tree and tip data
+tree <- readTrees("sim_data/bisse.tree")[1]
+data <- readCharacterDataDelimited("sim_data/tips.csv", stateLabels=2, type="NaturalNumbers", delimiter=",", header=false)
+
+# trick the MCMC with a dummy variable
+dummy ~ dnNormal(0,1)
+delta_d := abs(dummy * 0 + delta)
+moves[1] = mvSlide(dummy, weight=1)
+
+# set up our BiSSE model
+bisse ~ dnCDBDP( rootAge=tree.rootAge(),
+                 speciationRates = [lambda_0, lambda_1],
+                 extinctionRates = [mu_0, mu_1],
+                 Q = fnJC(2),
+                 delta = delta_d,
+                 pi=simplex(1,1),
+                 condition="time",
+                 taxa=tree.taxa(),
+                 nTimeSlices = 500 )
+
+# clamp the simulated data
+bisse.clamp( tree )
+bisse.clampCharData( data )
+
+# write the likelihood
+write("RevBayes lnl =", bisse.lnProbability(), file="results/likelihoods.txt", append=TRUE, separator=" ")
+
+# set up and run MCMC
+monitors[1] = mnScreen(printgen=1)
+monitors[2] = mnJointConditionalAncestralState(tree=tree, cdbdp=bisse, type="NaturalNumbers", printgen=1, withTips=true, withStartStates=false, filename="mcmc_output/anc_states.log")
+
+mymodel = model(delta)
+mymcmc = mcmc(mymodel, monitors, moves)
+mymcmc.run(generations=1000)
+
+# summarize ancestral states
+burnin=0
+anc_states = readAncestralStateTrace("mcmc_output/anc_states.log")
+ancestralStateTree(tree, anc_states, include_start_states=false, "results/revbayes_ancestral_states.tree", burnin)
+
+q()
