@@ -8,8 +8,8 @@ estimation implemented in the R package [diversitree](http://www.zoology.ubc.ca/
 
 ### To run an example:
 
-First simulate a tree and character under BiSSE in diversitree. This script will also estimate 
-marginal ancestral states using diversitree.
+First simulate a tree and character under BiSSE using diversitree. This script will also estimate 
+marginal ancestral states using diversitree:
 
 ```
 Rscript 1_simulate_BiSSE.R
@@ -34,10 +34,10 @@ and q01 = q10 = 0.02.
 
 The log-likelihood as computed by diversitree was -260.634,
 whereas with RevBayes it was -260.803.
-Small difference in the log-likelihoods are expected due to numerical approximations.
+Small differences in the log-likelihoods are expected due to numerical approximations.
 However the joint and marginal reconstructions should return the same probabilities 
 for ancestral states at the root, and indeed
-divirsitree calculated the root probability of being in state 0 as 0.6882
+diversitree calculated the root probability of being in state 0 as 0.6882
 and RevBayes calculated it as 0.6883.
 
 ### diversitree ancestral states:
