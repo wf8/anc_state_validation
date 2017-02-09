@@ -4,7 +4,7 @@ lambda_0 <- 0.2
 lambda_1 <- 0.4
 mu_0 <- 0.01
 mu_1 <- 0.1
-delta <- 0.02
+delta <- 0.1
 
 # read in simulated tree and tip data
 tree <- readTrees("sim_data/bisse.tree")[1]
@@ -34,12 +34,12 @@ bisse.clampCharData( data )
 write("RevBayes lnl =", bisse.lnProbability(), file="results/likelihoods.txt", append=TRUE, separator=" ")
 
 # set up and run MCMC
-monitors[1] = mnScreen(printgen=1)
+monitors[1] = mnScreen(printgen=100)
 monitors[2] = mnJointConditionalAncestralState(tree=tree, cdbdp=bisse, type="NaturalNumbers", printgen=1, withTips=true, withStartStates=false, filename="mcmc_output/anc_states.log")
 
 mymodel = model(delta)
 mymcmc = mcmc(mymodel, monitors, moves)
-mymcmc.run(generations=1000)
+mymcmc.run(generations=10000)
 
 # summarize ancestral states
 burnin=0

@@ -1,2 +1,2 @@
-diversitree lnl = -260.6336 
-RevBayes lnl = -260.803
+diversitree lnl = -109.4591 
+RevBayes lnl = -109.71
