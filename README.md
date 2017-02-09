@@ -6,6 +6,16 @@ estimation of SSE models implemented in [RevBayes](http://revbayes.com)
 against the marginal ancestral state
 estimation implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/).
 
+Note that in RevBayes we sample ancestral states from their joint distribution 
+conditional on the tip states and the model parameters during the MCMC. 
+However, when we summarize the results we calculate the marginal posterior probability 
+of each node being in each state. 
+So the RevBayes marginal ancestral state reconstructions 
+which are estimated via MCMC are directly comparable 
+to the analytical marginal ancestral states computed by diversitree.
+It is possible to summarize the results of our analyses to display
+the MAP joint ancestral state reconstruction, but we have not done so in this work.
+
 ### To run an example:
 
 First simulate a tree and character under BiSSE using diversitree. This script will also estimate 
@@ -15,7 +25,7 @@ and plot marginal ancestral states using diversitree:
 Rscript 1_simulate_BiSSE.R
 ```
 
-Now estimate joint ancestral states using RevBayes:
+Now estimate ancestral states using RevBayes and summarize the marginal ancestral states:
 
 ```
 rb 2_validate.Rev
@@ -42,9 +52,9 @@ and q01 = q10 = 0.1.
 The log-likelihood as computed by diversitree was -109.4591,
 whereas with RevBayes it was -109.71.
 Small differences in the log-likelihoods are expected due to differences
-in the way diversitree and RevBayes calculates probabilities at the root,
+in the way diversitree and RevBayes calculate probabilities at the root,
 and also due to numerical approximations.
-However the joint and marginal reconstructions should return the same probabilities 
+However both reconstructions should return the same probabilities 
 for ancestral states at the root, and indeed
 diversitree calculated the root probability of being in state 0 as 0.555
 and RevBayes calculated it as 0.554. 
