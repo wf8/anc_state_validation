@@ -51,7 +51,9 @@ and RevBayes calculated it as 0.554. From a plot comparing
 the posterior probabilities for all nodes estimated in RevBayes to those
 estimated in diversitree we can see that all the estimates are very close:
 
-<img src="results/posteriors_plot" style="width: 300px;"/>
+<div style="text-align: center;">
+<img src="results/posteriors_plot.jpg" style="width: 300px;"/>
+</div>
 
 ### diversitree ancestral states:
 
