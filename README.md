@@ -47,9 +47,11 @@ and also due to numerical approximations.
 However the joint and marginal reconstructions should return the same probabilities 
 for ancestral states at the root, and indeed
 diversitree calculated the root probability of being in state 0 as 0.555
-and RevBayes calculated it as 0.554. From a plot comparing
-the posterior probabilities for all nodes estimated in RevBayes to those
-estimated in diversitree we can see that all the estimates are very close:
+and RevBayes calculated it as 0.554. 
+The estimated posterior probabilities are very close for all nodes.
+This is shown in a plot comparing
+the posterior probabilities for all nodes being in state 1 
+as estimated by RevBayes against the diversitree estimates:
 
 <p align="center">
 <img src="results/posteriors_plot.jpg" width="500px"/>

@@ -38,16 +38,17 @@ for (i in (num_taxa + 1):num_node) {
     rb = as.numeric(levels(rb))[rb]
 
     if (abs(rb - dt) > 0.1)
-        dt = anc_states[2, i - num_taxa]
+        #dt = anc_states[2, i - num_taxa]
+        rb = 1 - rb
 
-    df = rbind(df, list(RevBayes=rb, diversitree=dt))
+    df = rbind(df, list(RevBayes=1-rb, diversitree=1-dt))
 
 }
 
 # plot the comparison
 p = ggplot(df, aes(RevBayes, diversitree)) + geom_point() +
     geom_line(aes(y=c(0:25)/25, x=c(0:25)/25), linetype="dotted", colour="blue") +
-    xlim(min(df$RevBayes)-0.1, 1) + ylim(min(df$RevBayes)-0.1, 1) + 
+    xlim(0, 1) + ylim(0, 1) + 
     xlab("RevBayes posterior probabilities") + ylab("diversitree posterior probabilities")
 ggsave("results/posteriors_plot.pdf", p)
 
