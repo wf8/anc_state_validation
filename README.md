@@ -10,11 +10,13 @@ implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/divers
 
 Although the closest model to ChromoSSE implemented in diversitree
 is ClaSSE (Goldberg and Igi&#263; 2012), ancestral state estimation for ClaSSE is not implemented in diversitree.
-Therefore here we compare the ancestral state estimation of BiSSE (Maddison et al. 2007) as implemented
-in diversitree to the estimates made by RevBayes. Note that in RevBayes BiSSE,
-ChromoSSE, and all other SSE models use the same C++ classes and algorithms,
-so validating ancestral state estimation for BiSSE should provide confidence
-in estimates made by all SSE models.
+Therefore here we compare the ancestral state estimates for BiSSE (Maddison et al. 2007) as implemented
+in diversitree to the estimates made by RevBayes. 
+Note that as implemented in RevBayes the BiSSE,
+ChromoSSE, ClaSSE, MuSSE (FitzJohn 2012), and HiSSE (Beaulieu and O’Meara
+2016) models use the same C++ classes and algorithms for parameter and
+ancestral state estimation, so validating ancestral state estimates for BiSSE should
+provide confidence in estimates made by RevBayes for all these SSE models.
 
 In RevBayes we sample ancestral states for SSE models
 from their joint distribution
