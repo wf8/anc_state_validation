@@ -1,5 +1,5 @@
 
-# Validating ancestral state estimates for SSE model in RevBayes
+# Validating ancestral state estimates for SSE models in RevBayes
 
 This code repository 
 contains scripts to validate the Monte Carlo method of
