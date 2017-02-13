@@ -4,7 +4,7 @@
 This code repository 
 contains scripts to validate the Monte Carlo method of
 ancestral state estimation for SSE models
-implemented we in [RevBayes](http://revbayes.com) (H&ouml;hna et al. 2016) against the
+we implemented in [RevBayes](http://revbayes.com) (H&ouml;hna et al. 2016) against the
 analytical marginal ancestral state estimation
 implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/) (FitzJohn 2012).
 
