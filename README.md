@@ -25,7 +25,7 @@ So the RevBayes marginal ancestral state reconstructions which are
 estimated via MCMC are directly comparable to the
 analytical marginal ancestral states computed by diversitree.
 It would be possible to summarize the samples from the MCMC
-to reconstruct the MAP joint ancestral state reconstruction,
+to reconstruct the maximum a posteriori joint ancestral state reconstruction,
 but we have not done so in this work.
 
 
