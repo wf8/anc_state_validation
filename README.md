@@ -1,16 +1,16 @@
 
-# Validating RevBayes joint ancestral state estimation
+# Validating ancestral state estimates for SSE model in RevBayes
 
 This code repository 
 contains scripts to validate the Monte Carlo method of
 ancestral state estimation for SSE models
-implemented in [RevBayes](http://revbayes.com) against the
+implemented we in [RevBayes](http://revbayes.com) (H&ouml;hna et al. 2016) against the
 analytical marginal ancestral state estimation
-implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/).
+implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/) (FitzJohn 2012).
 
 Although the closest model to ChromoSSE implemented in diversitree
-is ClaSSE, ancestral state estimation for ClaSSE is not implemented in diversitree.
-Therefore here we compare the ancestral state estimation of BiSSE as implemented
+is ClaSSE (Goldberg and Igi&#263; 2012), ancestral state estimation for ClaSSE is not implemented in diversitree.
+Therefore here we compare the ancestral state estimation of BiSSE (Maddison et al. 2007) as implemented
 in diversitree to the estimates made by RevBayes. Note that in RevBayes BiSSE,
 ChromoSSE, and all other SSE models use the same C++ classes and algorithms,
 so validating ancestral state estimation for BiSSE should provide confidence
