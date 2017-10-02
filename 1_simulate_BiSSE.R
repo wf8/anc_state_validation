@@ -12,7 +12,7 @@ mu_1 = 0.1
 delta = 0.1
 
 # parameters = λ0, λ1, µ0, µ1, q01, q10
-pars = c(lambda_0, lambda_1, mu_0, mu_1, delta, delta)
+pars = c(lambda_0, lambda_1, mu_0, mu_1, delta, 4*delta)
 phy = tree.bisse(pars, max.t=22, x0=0)
 states = phy$tip.state
 

@@ -19,12 +19,12 @@ moves[1] = mvSlide(dummy, weight=1)
 bisse ~ dnCDBDP( rootAge=tree.rootAge(),
                  speciationRates = [lambda_0, lambda_1],
                  extinctionRates = [mu_0, mu_1],
-                 Q = fnJC(2),
-                 delta = delta_d,
+                 Q = fnFreeK([delta_d,4*delta_d],rescaled=FALSE),
+                 delta = 1.0,
                  pi=simplex(1,1),
                  condition="time",
                  taxa=tree.taxa(),
-                 nTimeSlices = 500 )
+                 nTimeSlices = 5000 )
 
 # clamp the simulated data
 bisse.clamp( tree )
@@ -34,7 +34,7 @@ bisse.clampCharData( data )
 write("RevBayes lnl =", bisse.lnProbability(), file="results/likelihoods.txt", append=TRUE, separator=" ")
 
 # set up and run MCMC
-monitors[1] = mnScreen(printgen=100)
+monitors[1] = mnScreen(printgen=10)
 monitors[2] = mnJointConditionalAncestralState(tree=tree, cdbdp=bisse, type="NaturalNumbers", printgen=1, withTips=true, withStartStates=false, filename="mcmc_output/anc_states.log")
 
 mymodel = model(delta)
