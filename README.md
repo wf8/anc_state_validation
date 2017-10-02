@@ -65,20 +65,14 @@ Rscript 4_plot_node_probs.R
 Here we show ancestral state estimates under BiSSE for an example where
 the tree and tip data were simulated in diversitree with the following parameters:
 λ0 = 0.2, λ1 = 0.4, µ0 = 0.01, µ1 = 0.1, 
-and q01 = q10 = 0.1.
+and q01 = 0.1 and q10 = 0.4.
 
-The log-likelihood as computed by diversitree was -109.4591,
-whereas with RevBayes it was -109.71.
-Small differences in the log-likelihoods are expected due to differences
-in the way diversitree and RevBayes calculate probabilities at the root,
-and also due to numerical approximations.
-However both reconstructions should return the same probabilities 
-for ancestral states at the root, and indeed
-diversitree calculated the root probability of being in state 0 as 0.555
-and RevBayes calculated it as 0.554. 
-The estimated posterior probabilities are very close for all nodes.
+If the RevBayes Monte Carlo method produces correct ancestral states,
+the marginal posterior probabilities for each state at every node of the tree
+should be equal to those analytically computed by diversitree.
+Indeed, the estimated posterior probabilities are very close for all nodes.
 This is shown in a plot comparing
-the marginal posterior probabilities for all nodes being in state 1 
+the marginal posterior probabilities for all nodes being in state 0 
 as estimated by RevBayes against the diversitree estimates:
 
 <p align="center">
