@@ -4,7 +4,8 @@
 This code repository 
 contains scripts to validate the Monte Carlo method of
 ancestral state estimation for state-dependent speciation and extinction (SSE) models
-we implemented in [RevBayes](http://revbayes.com) (H&ouml;hna et al. 2016) against the
+we implemented for [Freyman and H&ouml;hna (2017)](https://doi.org/10.1093/sysbio/syx065) 
+in [RevBayes](http://revbayes.com) (H&ouml;hna et al. 2016) against the
 analytical marginal ancestral state estimation
 implemented in the R package [diversitree](http://www.zoology.ubc.ca/prog/diversitree/) (FitzJohn 2012).
 
