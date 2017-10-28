@@ -56,7 +56,7 @@ df$dt_ordered = sort(df$diversitree)
 # plot the comparison
 p = ggplot(df, aes(rb_ordered, dt_ordered)) + geom_point() +
     geom_line(aes(y=c(0:19)/19, x=c(0:19)/19), linetype="dotted", colour="blue") +
-    xlim(0, 1) + ylim(0, 1) + 
+    xlim(0, 1) + ylim(0, 1) + theme_classic(base_size=14) + 
     xlab("RevBayes posterior probabilities") + ylab("diversitree posterior probabilities")
 ggsave("results/posteriors_plot.pdf", p)
 
